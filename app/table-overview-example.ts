@@ -14,7 +14,6 @@ import { GetDataService } from './get-data.service';
 export class TableOverviewExample implements OnInit {
   maxSorted = 0;
   maxNoSorted = 0; 
-  daySorted = 0;
   displayedColumns = [
     'date',
     'open',
