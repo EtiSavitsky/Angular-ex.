@@ -16,6 +16,7 @@ import { GetDataService } from './get-data.service';
 export class TableOverviewExample implements OnInit {
   maxSorted = 0;
   maxNoSorted = 0; 
+  daySorted = 0;
   displayedColumns = [
     'date',
     'open',
@@ -67,7 +68,8 @@ export class TableOverviewExample implements OnInit {
     for (let i = 0; i < ibmArr.length; i++) {
       for (let j = i + 1; j < ibmArr.length; j++) {
         if (ibmArr[i].close - ibmArr[j].close > this.maxSorted) {
-          this.maxSorted = ibmArr[i].close - ibmArr[j].close; 
+          this.maxSorted = ibmArr[i].close - ibmArr[j].close;
+          this.daySorted = ibmArr[i].date;
         }
       }
     }
