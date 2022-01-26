@@ -33,9 +33,6 @@ export class TableOverviewExample implements OnInit {
     return this.http.get<IBMData[]>(this.url);
   }
   constructor(private http: HttpClient) {
-    // Create 100 users
-    // Assign the data to the data source for the table to render
-    // this.dataSource = new MatTableDataSource(users);
   }
   ngOnInit(): void {
     this.getData().subscribe((response) => {
