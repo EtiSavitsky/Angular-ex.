@@ -12,6 +12,8 @@ import { Console } from '@angular/core/src/console';
   templateUrl: 'table-overview-example.html',
 })
 export class TableOverviewExample implements OnInit {
+  maxSorted = 0;
+  maxNoSorted = 0; 
   displayedColumns = [
     'date',
     'open',
@@ -36,11 +38,9 @@ export class TableOverviewExample implements OnInit {
   }
   ngOnInit(): void {
     this.getData().subscribe((response) => {
-      const ibmArr: Array<IBMData> = new Array<IBMData>();
-
+      const ibmArr: Array<IBMData> = new Array<IBMData>(); 
       const arr = response['Time Series (Daily)'];
-
-      // console.log(arr)
+ 
       for (var k in arr) {
         let elemnt: IBMData = {
           date: new Date(k),
@@ -52,8 +52,7 @@ export class TableOverviewExample implements OnInit {
           volume: arr[k]['6. volume'],
           dividendAmount: arr[k]['7. dividend amount'],
           splitCoefficient: arr[k]['8. split coefficient'],
-        };
-        // console.log(elemnt);
+        }; 
         ibmArr.push(elemnt);
       }
       console.log(ibmArr);
@@ -65,8 +64,7 @@ export class TableOverviewExample implements OnInit {
       this.findMax(ibmArr);
     });
   }
-  maxSorted = 0;
-  maxNoSorted = 0; 
+
   findMaxSorted(ibmArr: Array<IBMData>) {
     for (let i = 0; i < ibmArr.length; i++) {
       for (let j = i + 1; j < ibmArr.length; j++) {
