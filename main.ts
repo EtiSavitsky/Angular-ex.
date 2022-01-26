@@ -41,6 +41,7 @@ import {TableOverviewExample} from './app/table-overview-example';
 import {HttpModule} from '@angular/http';
 import {HttpClientModule} from '@angular/common/http';
 import {CdkTableModule} from '@angular/cdk/table';
+import { GetDataService } from './app/get-data.service';
 
 @NgModule({
   exports: [
@@ -94,7 +95,7 @@ export class DemoMaterialModule {}
   entryComponents: [TableOverviewExample],
   declarations: [TableOverviewExample],
   bootstrap: [TableOverviewExample],
-  providers: []
+  providers: [GetDataService]
 })
 export class AppModule {}
 

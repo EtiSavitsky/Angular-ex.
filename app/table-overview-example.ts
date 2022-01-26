@@ -3,6 +3,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 import { Console } from '@angular/core/src/console';
 import { IBMData } from './ibmdata';
+import { GetDataService } from './get-data.service';
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -30,15 +31,11 @@ export class TableOverviewExample implements OnInit {
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
-  url =
-    'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=IBM&apikey=demo';
-  getData() {
-    return this.http.get<IBMData[]>(this.url);
-  }
-  constructor(private http: HttpClient) {
+
+  constructor(private getDataServise: GetDataService) {
   }
   ngOnInit(): void {
-    this.getData().subscribe((response) => {
+    this.getDataServise.getData().subscribe((response) => {
       const ibmArr: Array<IBMData> = new Array<IBMData>(); 
       const arr = response['Time Series (Daily)'];
  
