@@ -2,6 +2,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
 import { HttpClient } from '@angular/common/http';
 import { Console } from '@angular/core/src/console';
+import { IBMData } from './ibmdata';
 
 /**
  * @title Data table with sorting, pagination, and filtering.
@@ -96,14 +97,4 @@ export class TableOverviewExample implements OnInit {
   }
 }
 
-export interface IBMData {
-  date: Date;
-  open: number;
-  high: number;
-  low: number;
-  close: number;
-  adjustedClose: number;
-  volume: number;
-  dividendAmount: number;
-  splitCoefficient: number;
-}
+
