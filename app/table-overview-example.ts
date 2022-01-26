@@ -5,9 +5,7 @@ import { Console } from '@angular/core/src/console';
 import { IBMData } from './ibmdata';
 import { GetDataService } from './get-data.service';
 
-/**
- * @title Data table with sorting, pagination, and filtering.
- */
+
 @Component({   
   selector: 'table-overview-example',
   styleUrls: ['table-overview-example.css'],
